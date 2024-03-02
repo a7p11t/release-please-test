@@ -16,6 +16,7 @@ jobs:
       - name: create branch
         run: |
           echo "issue_title=$NUMBER"
+          echo "issue_body=$BODY"
           # Issueに紐づくブランチを作成する
           #gh issue develop $NUMBER --name "
         env:
