@@ -22,7 +22,7 @@ jobs:
       - name: create branch
         run: |
           # Issueのラベルを取得する
-          label=$(echo $LABELS | jq -r '.[].name
+          label=$(echo $LABELS | jq -r '.[].name')
           echo $label
 
           if [[ $label == *"enhancement"* ]]; then
