@@ -12,19 +12,19 @@ body:
   - type: input
     id: overview
     attributes:
-      label: 概要
+      label: Overview
       description: |
         この実装の概要について記載してください
   - type: textarea
     id: purpose
     attributes:
-      label: 目的
+      label: Purpose
       description: |
         このIssueの目的や、解決することでユーザが実現できるようになることを記載してください
   - type: textarea
     id: task
     attributes:
-      label: タスク
+      label: Task
       description: |
         このIssueを解決するために必要な作業を入力してください
       value: |
@@ -32,20 +32,22 @@ body:
   - type: markdown
     attributes:
       value: "## 自動化設定"
-  - type: dropdown
-    id: is-create-branch
-    attributes:
-      label: Issueの作成と同時にBranchを作成しますか？
-      options:
-        - はい、作成します
-        - いいえ、作成しません
-    validations:
-      required: true
+  #- type: dropdown
+  #  id: is-create-branch
+  #  attributes:
+  #    label: Issueの作成と同時にBranchを作成しますか？
+  #    options:
+  #      - はい、作成します
+  #      - いいえ、作成しません
+  #  validations:
+  #    required: true
   - type: input
     id: branch-name
     attributes:
-      label: Branch名
+      label: Branch Name
       description: |
         Issueに関連付けられるBranchの名前を入力してください
         実際のBranch名には、ラベルに応じた接頭辞とIssueの番号が付加されます
         Branchの命名規則は[XXX]()を参照してください
+    validate:
+      required: true
