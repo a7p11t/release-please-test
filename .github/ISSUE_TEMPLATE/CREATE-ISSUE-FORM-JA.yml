@@ -27,8 +27,8 @@ body:
       description: |
         このIssueを解決するために必要な作業を入力してください
   - type: markdown
-      attributes:
-        value: "## 自動化設定"
+    attributes:
+      value: "## 自動化設定"
   - type: dropdown
     id: is-create-branch
     attributes:
