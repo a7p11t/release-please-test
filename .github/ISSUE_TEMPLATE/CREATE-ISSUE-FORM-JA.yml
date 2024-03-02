@@ -1,29 +1,26 @@
-name: Create Issue (ja)
-description: Multi-Purpose Issue Template (ja)
+name: Create Enhancement Issue (ja)
+description: Enchancement Issue Template (ja)
 body:
   - type: markdown
     attributes:
-      value: "ああ"
-    attributes:
       value: |
         実装の概要や目的について、できるだけ詳細に記述してください
-        許可されるラベルは`enhancement`または`bug`のみです
   - type: input
     id: overview
     attributes:
-      label: Overview
+      label: 概要
       description: |
         この実装の概要について記載してください
   - type: textarea
     id: purpose
     attributes:
-      label: Purpose
+      label: 目的
       description: |
         このIssueの目的や、解決することでユーザが実現できるようになることを記載してください
   - type: textarea
     id: task
     attributes:
-      label: Task
+      label: タスク
       description: |
         このIssueを解決するために必要な作業を入力してください
       value: |
