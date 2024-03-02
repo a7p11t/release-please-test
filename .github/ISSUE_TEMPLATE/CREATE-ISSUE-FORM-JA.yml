@@ -21,6 +21,8 @@ body:
       label: Purpose
       description: |
         このIssueの目的や、解決することでユーザが実現できるようになることを記載してください
+      value: |
+        - XXX
   - type: textarea
     id: task
     attributes:
