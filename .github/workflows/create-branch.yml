@@ -12,7 +12,12 @@ jobs:
   create_issue_branch_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Create Issue Branch
-        uses: robvanderleek/create-issue-branch@main
+      # https://www.docswell.com/s/_n13u_/K1JG4E-2024-02-27-mierunebbq#p19
+      - name: create branch
+        run: |
+          echo "issue_title=$ISSUE_NUMBER"
+          # Issueに紐づくブランチを作成する
+          #gh issue develop $ISSUE_NUMBER --name "
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ## IssueのIDを取得する
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
