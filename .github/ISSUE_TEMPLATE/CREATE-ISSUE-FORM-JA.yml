@@ -1,0 +1,42 @@
+name: Create Issue
+description: 
+body:
+  - type: markdown
+    attributes:
+      value: |
+        実装の概要や目的について、できるだけ詳細に記述してください
+        許可されるラベルは`enhancement`または`bug`のみです
+  - type: checkboxes
+    id: is-create-branch
+    attributes:
+      label: Branchの自動作成
+      options:
+        - label: Issueの作成と同時にBranchを作成する場合は、チェックを付けてください
+  - type: input
+    id: branch-name
+    attributes:
+      label: Branch名
+      description: |
+        Issueに関連付けられるBranchの名前を入力してください
+        実際のBranch名には、ラベルに応じた接頭辞とIssueの番号が付加されます
+        Branchの命名規則は[XXX]()を参照してください
+  - type: input
+    id: overview
+    attributes:
+      label: Overview
+      description: |
+        この実装の概要について記載してください
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Purpose
+      description: |
+        このIssueの目的や、解決することでユーザが実現できるようになることを記載してください
+      render: markdown
+  - type: textarea
+    id: task
+    attributes:
+      label: Task
+      description: |
+        このIssueを解決するために必要な作業を入力してください
+      render: markdown
