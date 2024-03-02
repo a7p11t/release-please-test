@@ -21,13 +21,22 @@ jobs:
       # https://www.docswell.com/s/_n13u_/K1JG4E-2024-02-27-mierunebbq#p19
       - name: create branch
         run: |
+          # labelにenhancementとbugの両方が含まれていた場合、終了する（いつか作りたい）
+          # Issueのラベルを取得する
+          label=$(echo $LABELS | jq -r '.[].name')
+          echo "以下はテスト"
+          echo $label
+          if [[ $label == *"enhancement"* ]]; then
+            branch_name_pre="feature/"
+          elif [[ $label == *"bug"* ]]; then
+            branch_name_pre="fix/"
+          else
+            branch_name_pre=""
+          fi
+          
           # Issueに記載されたブランチ名を取得する
-          #if ($LABELS)
-          #branch_name_pre="feature/"
-          #branch_name_pre="fix/"
-          echo $LABELS
           branch_name=$(echo "$BODY" | grep -A 2 "### Branch Name" | tail -n 1)
-          echo "$branch_name"
+          
           # Issueに関連するブランチを作成する
           gh issue develop $NUMBER --name "$branch_name"
         env:
