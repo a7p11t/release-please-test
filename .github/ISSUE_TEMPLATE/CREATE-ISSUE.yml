@@ -4,7 +4,21 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
+        実装の概要や目的について、できるだけ詳細に記述してください
+  - type: checkboxes
+    id: is-create-branch
+    attributes:
+      label: Automatically creating branches
+      options:
+        - label: Would you like to create a branch?
+          required: true
+  - type: input
+    id: branch-name
+    attributes:
+      label: Branch Name
+      description: |
+        Please provide the name of the branch associated with this issue. |
+        Once the issue is created, the branch will be automatically generated.
   - type: input
     id: contact
     attributes:
@@ -43,17 +57,4 @@ body:
         - Chrome
         - Safari
         - Microsoft Edge
-  - type: textarea
-    id: logs
-    attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: shell
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
+
