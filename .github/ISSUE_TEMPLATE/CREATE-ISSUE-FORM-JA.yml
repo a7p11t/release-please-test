@@ -1,5 +1,5 @@
-name: Create Issue
-description: 
+name: Create Issue (ja)
+description: Multi-Purpose Issue Template (ja)
 body:
   - type: markdown
     attributes:
