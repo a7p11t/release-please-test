@@ -4,8 +4,8 @@ labels: [ "enhancement", "bug"] # どちらかを選択して作る
 body:
   - type: markdown
     attributes:
-      value: "## 基本設定"
       value: |
+       "## 基本設定"
         実装の概要や目的について、できるだけ詳細に記述してください
   - type: input
     id: overview
