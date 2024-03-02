@@ -12,6 +12,8 @@ jobs:
   create_issue_branch_job:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
       # https://www.docswell.com/s/_n13u_/K1JG4E-2024-02-27-mierunebbq#p19
       - name: create branch
         run: |
@@ -27,4 +29,3 @@ jobs:
           NUMBER: ${{ github.event.issue.number }}
           ## bodyを取得する
           BODY: ${{ github.event.issue.body }}
-
