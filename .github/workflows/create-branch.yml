@@ -17,7 +17,7 @@ jobs:
         run: |
           echo "$branch_name"
           # Issueに記載されたブランチ名を取得する
-          branch_name=$(echo "$issue_body" | grep -A 1 "### Branch Name" | tail -n 1)
+          branch_name=$(echo "$issue_body" | grep -A 2 "### Branch Name" | tail -n 1)
           # Issueに紐づくブランチを作成する
           gh issue develop $NUMBER --name "$branch_name"
         env:
