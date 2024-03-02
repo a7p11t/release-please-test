@@ -21,7 +21,6 @@ jobs:
       # https://www.docswell.com/s/_n13u_/K1JG4E-2024-02-27-mierunebbq#p19
       - name: create branch
         run: |
-          # labelにenhancementとbugの両方が含まれていた場合、終了する（いつか作りたい）
           # Issueのラベルを取得する
           label=$(echo $LABELS | jq -r '.[].name')
           # Prefixの生成
@@ -35,8 +34,9 @@ jobs:
 
           # Issueに記載されたブランチ名を取得する
           branch_content=$(echo "$BODY" | grep -A 2 "### Branch Name" | tail -n 1)
-          branch_suffix="_${NUMBER}"
+          branch_suffix="_#${NUMBER}"
           branch_name=$branch_prefix$branch_content$branch_suffix
+          
           # Issueに関連するブランチを作成する
           gh issue develop $NUMBER --name "$branch_name"
         env:
