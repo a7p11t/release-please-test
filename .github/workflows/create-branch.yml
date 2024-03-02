@@ -21,6 +21,8 @@ jobs:
           # Issueに紐づくブランチを作成する
           gh issue develop $NUMBER --name "$branch_name"
         env:
+          # ghコマンドの実行に必須
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ## IssueのIDを取得する
           NUMBER: ${{ github.event.issue.number }}
           ## bodyを取得する
