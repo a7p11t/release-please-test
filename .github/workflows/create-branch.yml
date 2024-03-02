@@ -22,14 +22,20 @@ jobs:
       - name: create branch
         run: |
           # Issueに記載されたブランチ名を取得する
+          #if ($LABELS)
+          #branch_name_pre="feature/"
+          #branch_name_pre="fix/"
+          echo $LABELS
           branch_name=$(echo "$BODY" | grep -A 2 "### Branch Name" | tail -n 1)
           echo "$branch_name"
-          # Issueに紐づくブランチを作成する
+          # Issueに関連するブランチを作成する
           gh issue develop $NUMBER --name "$branch_name"
         env:
-          # ghコマンドの実行に必須
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ## IssueのIDを取得する
           NUMBER: ${{ github.event.issue.number }}
+          ## IssueのLabelを取得する
+          LABELS: ${{ github.event.issue.labels }}
           ## bodyを取得する
           BODY: ${{ github.event.issue.body }}
+          
