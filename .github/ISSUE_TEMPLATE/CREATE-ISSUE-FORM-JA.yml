@@ -1,5 +1,6 @@
 name: Create Enhancement Issue (ja)
 description: Enchancement Issue Template (ja)
+labels: [ "enhancement", "bug"] # 
 body:
   - type: markdown
     attributes:
