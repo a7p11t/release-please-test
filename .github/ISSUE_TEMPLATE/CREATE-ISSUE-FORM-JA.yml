@@ -49,5 +49,5 @@ body:
         Issueに関連付けられるBranchの名前を入力してください
         実際のBranch名には、ラベルに応じた接頭辞とIssueの番号が付加されます
         Branchの命名規則は[XXX]()を参照してください
-    validate:
+    validations:
       required: true
