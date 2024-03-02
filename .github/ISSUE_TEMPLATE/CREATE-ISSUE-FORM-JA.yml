@@ -3,26 +3,11 @@ description: Multi-Purpose Issue Template (ja)
 body:
   - type: markdown
     attributes:
+      value: "ああ"
+    attributes:
       value: |
         実装の概要や目的について、できるだけ詳細に記述してください
         許可されるラベルは`enhancement`または`bug`のみです
-  - type: dropdown
-    id: is-create-branch
-    attributes:
-      label: Issueの作成と同時にBranchを作成しますか？
-      options:
-        - はい、作成します
-        - いいえ、作成しません
-    validations:
-      required: true
-  - type: input
-    id: branch-name
-    attributes:
-      label: Branch名
-      description: |
-        Issueに関連付けられるBranchの名前を入力してください
-        実際のBranch名には、ラベルに応じた接頭辞とIssueの番号が付加されます
-        Branchの命名規則は[XXX]()を参照してください
   - type: input
     id: overview
     attributes:
@@ -41,3 +26,23 @@ body:
       label: Task
       description: |
         このIssueを解決するために必要な作業を入力してください
+  - type: markdown
+      attributes:
+        value: "## 自動化設定"
+  - type: dropdown
+    id: is-create-branch
+    attributes:
+      label: Issueの作成と同時にBranchを作成しますか？
+      options:
+        - はい、作成します
+        - いいえ、作成しません
+    validations:
+      required: true
+  - type: input
+    id: branch-name
+    attributes:
+      label: Branch名
+      description: |
+        Issueに関連付けられるBranchの名前を入力してください
+        実際のBranch名には、ラベルに応じた接頭辞とIssueの番号が付加されます
+        Branchの命名規則は[XXX]()を参照してください
