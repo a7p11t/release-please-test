@@ -15,6 +15,8 @@ body:
       label: Overview
       description: |
         この実装の概要について記載してください
+      validations:
+      required: true
   - type: textarea
     id: purpose
     attributes:
@@ -23,6 +25,8 @@ body:
         このIssueの目的や、解決することでユーザが実現できるようになることを記載してください
       value: |
         - XXX
+    validations:
+      required: true
   - type: textarea
     id: task
     attributes:
@@ -31,6 +35,8 @@ body:
         このIssueを解決するために必要な作業を入力してください
       value: |
         - [ ] XXX
+    validations:
+      required: true
   - type: markdown
     attributes:
       value: "## 自動化設定"
