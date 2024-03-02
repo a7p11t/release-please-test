@@ -6,12 +6,6 @@ body:
       value: |
         実装の概要や目的について、できるだけ詳細に記述してください
         許可されるラベルは`enhancement`または`bug`のみです
-  - type: checkboxes
-    id: is-create-branch
-    attributes:
-      label: Branchの自動作成
-      options:
-        - label: Issueの作成と同時にBranchを作成する場合は、チェックを付けてください
   - type: input
     id: branch-name
     attributes:
