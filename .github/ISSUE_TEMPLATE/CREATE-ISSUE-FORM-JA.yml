@@ -5,6 +5,7 @@ body:
   - type: markdown
     attributes:
       value: "## 基本設定"
+  - type: markdown
     attributes:
       value: |
         実装の概要や目的について、できるだけ詳細に記述してください
