@@ -15,7 +15,7 @@ body:
       label: Overview
       description: |
         この実装の概要について記載してください
-      validations:
+    validations:
       required: true
   - type: textarea
     id: purpose
