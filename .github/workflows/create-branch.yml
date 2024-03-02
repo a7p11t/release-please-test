@@ -35,7 +35,7 @@ jobs:
           ## IssueのIDを取得する
           NUMBER: ${{ github.event.issue.number }}
           ## IssueのLabelを取得する
-          LABELS: ${{ github.event.issue.labels }}
+          LABELS: ${{ toJson(github.event.issue.labels) }}
           ## bodyを取得する
           BODY: ${{ github.event.issue.body }}
           
