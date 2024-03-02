@@ -24,19 +24,19 @@ jobs:
           # labelにenhancementとbugの両方が含まれていた場合、終了する（いつか作りたい）
           # Issueのラベルを取得する
           label=$(echo $LABELS | jq -r '.[].name')
-          echo "以下はテスト"
-          echo $label
+          # Prefixの生成
           if [[ $label == *"enhancement"* ]]; then
-            branch_name_pre="feature/"
+            branch_prefix="feature/"
           elif [[ $label == *"bug"* ]]; then
-            branch_name_pre="fix/"
+            branch_prefix="fix/"
           else
-            branch_name_pre=""
+            branch_prefix=""
           fi
-          
+
           # Issueに記載されたブランチ名を取得する
-          branch_name=$(echo "$BODY" | grep -A 2 "### Branch Name" | tail -n 1)
-          
+          branch_content=$(echo "$BODY" | grep -A 2 "### Branch Name" | tail -n 1)
+          branch_suffix="_${NUMBER}"
+          branch_name=$branch_prefix$branch_content$branch_suffix
           # Issueに関連するブランチを作成する
           gh issue develop $NUMBER --name "$branch_name"
         env:
