@@ -15,7 +15,7 @@ jobs:
       # https://www.docswell.com/s/_n13u_/K1JG4E-2024-02-27-mierunebbq#p19
       - name: create branch
         run: |
-          echo $branch_name
+          echo "$branch_name"
           # Issueに記載されたブランチ名を取得する
           branch_name=$(echo "$issue_body" | grep -A 1 "### Branch Name" | tail -n 1)
           # Issueに紐づくブランチを作成する
