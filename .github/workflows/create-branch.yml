@@ -19,7 +19,7 @@ jobs:
           branch_name=$(echo "$BODY" | grep -A 2 "### Branch Name" | tail -n 1)
           echo "$branch_name"
           # Issueに紐づくブランチを作成する
-          ##gh issue develop $NUMBER --name "$branch_name"
+          gh issue develop $NUMBER --name "$branch_name"
         env:
           # ghコマンドの実行に必須
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
