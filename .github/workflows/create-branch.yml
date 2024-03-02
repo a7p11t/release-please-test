@@ -15,13 +15,13 @@ jobs:
       # https://www.docswell.com/s/_n13u_/K1JG4E-2024-02-27-mierunebbq#p19
       - name: create branch
         run: |
-          echo "issue_title=$NUMBER"
-          echo "issue_body=$BODY"
+          # Issueに記載されたブランチ名を取得する
+          branch_name=$(echo "$issue_body" | grep -A 1 "### Branch Name" | tail -n 1)
           # Issueに紐づくブランチを作成する
-          #gh issue develop $NUMBER --name "
+          gh issue develop $NUMBER --name $branch_name
         env:
           ## IssueのIDを取得する
           NUMBER: ${{ github.event.issue.number }}
           ## bodyを取得する
           BODY: ${{ github.event.issue.body }}
-          
+
